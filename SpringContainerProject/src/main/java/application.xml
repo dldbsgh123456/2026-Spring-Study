@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 클래스 등록 -->
+    <!-- 
+        Map map=new HashMap()
+        map.put("id",Class.forNane(com.sist.main.Sawon)) => id 중복이 되면 오류 발생
+     -->
+     <!-- 디폴트가 싱글톤(같은 객체) , 객체 여러개 쓰려면 프로토타입-->
+    <bean id="sa" class="com.sist.main.Sawon" scope="singleton">
+        <!-- 변수에 값을 주입 : setter DI(초기값 설정) -->
+        <property name="sabun" value="1"/>
+        <property name="name" value="홍길동"/>
+        <property name="dept" value="개발부"/>
+        <property name="job" value="사원"/>
+        <property name="pay" value="3200"/>
+    </bean>
+    
+    <bean id="sa1" class="com.sist.main.Sawon" scope="singleton">
+        <!-- 변수에 값을 주입 : setter DI(초기값 설정) -->
+        <property name="sabun"><value>2</value></property>
+        <property name="name"><value>심청이</value></property>
+        <property name="dept"><value>총무부</value></property>
+        <property name="job"><value>대리</value></property>
+        <property name="pay"><value>3500</value></property>
+    </bean>  
+    <!--  가장 많이 사용 -->
+    <bean id="sa2" class="com.sist.main.Sawon" scope="singleton"
+        p:sabun="3"
+        p:name="이순신"
+        p:dept="기획부"
+        p:job="과장"
+        p:pay="4500"
+        />
+</beans>

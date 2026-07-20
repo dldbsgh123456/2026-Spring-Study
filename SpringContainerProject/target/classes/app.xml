@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 
+       <bean id="mem" class="com.sist.main.Member"> : 디폴트 생성자 호출
+       
+       public class Member
+       {
+         ==
+         ==
+         ==
+         ==
+         public Member(int mno,String name, String address,String phone)
+       }    
+    
+     -->
+    
+    <bean id="mem1" class="com.sist.main.Member"
+     init-method="init" destroy-method="destory"
+    >
+      <constructor-arg value="1" index="0"/>
+      <constructor-arg value="홍길동" index="1"/>
+      <constructor-arg value="서울" index="2"/>
+      <constructor-arg value="1111-1111" index="3"/>
+    </bean>
+    
+    <bean id="mem2" class="com.sist.main.Member">
+      <constructor-arg><value>2</value></constructor-arg>
+      <constructor-arg><value>심청이</value></constructor-arg>
+      <constructor-arg><value>경기</value></constructor-arg>
+      <constructor-arg><value>2222-2222</value></constructor-arg>
+    </bean>
+    
+    <!-- 가장 많이 사용 -->
+    <bean id="mem3" class="com.sist.main.Member"
+    c:mno="1"
+    c:name="이순신"
+    c:address="강원"
+    c:phone="3333-3333"    
+    />
+    
+    <bean id="mem4" class="com.sist.main.Member"
+    c:_00="1"
+    c:_01="이순신"
+    c:_02="강원"
+    c:_03="3333-3333"    
+    />
+</beans>
