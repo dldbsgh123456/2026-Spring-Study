@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+    <!--  데이터베이스 환경 설정 -->
+    <bean id="ssf" class="org.mybatis.spring.SqlSessionFactoryBean"
+       p:dataSource-ref="ds"
+       p:configLocation="classpath:Config.xml"
+    />
+    <!-- SqlSessionFactory 생성 
+         ssf=CreateSqlSessionFactory.getSsf()
+    -->
+    <bean id="mapper" class="org.mybatis.spring.mapper.MapperFactoryBean"
+       p:mapperInterface="com.sist.mapper.EmpMapper"
+       p:sqlSessionFactory-ref="ssf"
+    />
+    <!-- 인터페이스 구현하는 부분 -->
+    <bean id="dao" class="com.sist.dao.EmpDAO"
+      p:mapper-ref="mapper"
+    />
+    <!-- 구현된 객체 받기  -->
+    <!-- 
+       DI : 객체 생성에 필요한 변수값을 설정해서 주입 
+            객체와 객체의 연결 관계도 설정 
+     -->
+      <bean id="ds"
+       class="org.apache.commons.dbcp.BasicDataSource"
+       p:driverClassName="oracle.jdbc.driver.OracleDriver"
+       p:url="jdbc:oracle:thin:@localhost:1521:XE"
+       p:username="hr"
+       p:password="happy"
+    />
+</beans>
