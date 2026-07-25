@@ -1,13 +1,5 @@
 # 🌱 Spring 학습 정리
 
-## 📌 진행 현황
-
-- [ ] Spring 기초 (IoC/DI, Bean)
-- [ ] Spring MVC
-- [ ] MyBatis 연동
-- [ ] Spring Security
-- [ ] 기타
-
 ## 📂 목차
 
 ### Spring 기초
