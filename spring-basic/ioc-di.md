@@ -23,8 +23,8 @@ new Member(2, "심청이", ...) 코드수정 -> 다시 컴파일
 
 but XML 파일에 클래스 등록을 해놓는다면 설정파일만 수정하면 됨
 
-class는 꼭 네임으로 적어야 함, scope는 안 적으면 싱글이 디폴트 객체 여러개 쓰고 싶으면 prototype
-Lombok(@DATA)의 setter 이용해서 값 설정
+class는 꼭 풀네임으로 적어야 함, scope는 안 적으면 싱글톤이 디폴트 객체 여러개 쓰고 싶으면 prototype
+@DATA(setter) 이용해서 값 설정
 ```java
 <bean id="mem" class="com.sist.main.Member" scope="singleton">  -> 네임스페이스 p태그 방법 3가지중 첫 번째
   <property name="sabun" value="1"></property>
@@ -51,7 +51,7 @@ Lombok(@DATA)의 setter 이용해서 값 설정
 ```
 ***네임스페이스탭에서 p태그가 체크가 되어 있어야 할 수 있음***
 --------------------------------------------------------------------------------------------------------------------------
-@AllArgsConstructor 이용해서 값 설정
+@AllArgsConstructor(생성자) 이용해서 값 설정
 ```java
 <bean id="mem" class="com.sist.main.Member" scope="singleton"> 네임스페이스 c태그 방법 4가지중 첫 번째
 <constructor-args value="1" index="0"/>
