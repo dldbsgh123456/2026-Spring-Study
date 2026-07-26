@@ -9,12 +9,14 @@
 ### 1. 클래스 등록
 
 우선, XML없이 직접 코드로 객체를 만든다면
+```java
 public class MainClass {
     public static void main(String[] args) {
         Member mem = new Member(1, "홍길동", "서울", "1111-1111");
         mem.print();
     }
 }
+```
 가능한지란
 문제1. 값이 바뀔 때마다 코드를 고치고 다시 컴파일해야 함
 new Member(2, "심청이", ...) 코드수정 -> 다시 컴파일->해요
@@ -22,24 +24,28 @@ new Member(2, "심청이", ...) 코드수정 -> 다시 컴파일->해요
 but XML 파일에 클래스 등록을 해놓는다면 설정파일만 수정하면 됨
 
 class는 꼭 네임으로 적어야 함, scope는 안 적으면 싱글이 디폴트 객체 여러개 쓰고 싶으면 prototype
+```java
 <bean id="mem" class="com.sist.main.Member" scope="singleton">  -> 네임스페이스 p태그 방법 3가지중 첫 번째
   <property name="sabun" value="1"></property>
   <property name="name" value="홍길동"></property>
   <property name="loc" value="서울"></property>
   <property name="phone" value="1111-1111"></property>
 </bean>
-
+```
+```java
 <bean id="mem" class="com.sist.main.Member" scope="singleton">  -> 네임스페이스 p태그 방법 3가지중 두 번째
   <property name="sabun"><value>1</value></property>
   <property name="name"><value>홍길동</value></property>
   <property name="loc"><value>서울</value></property>
   <property name="phone"><value>1111-1111</value></property>
 </bean>
-
+```
+```java
 <bean id="mem" class="com.sist.main.Member" scope="singleton"  -> 네임스페이스 p태그 방법 3가지중 세 번째 (가장 많이 쓰임)
   p:sabun="1"
   p:name="홍길동"
   p:loc="서울"
   p:phone="1111-1111"
   />
+```
 주의 : 콘솔 위에 네임스페이스탭에서 p태그가 체크가 되어 있어야 할 수 있음
