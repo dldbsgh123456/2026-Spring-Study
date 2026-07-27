@@ -11,69 +11,72 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sist.vo.BoardVO;
 
+import oracle.jdbc.proxy.annotation.Post;
+
 @Controller
 /*
- *   Rest API
- *     = @GetMapping : SELECT
- *     = @PostMapping : INSERT
- *     ----------------- ¿•ø°º≠¥¬ ¡÷∑Œ ªÁøÎ
- *     = @PutMapping : UPDATE
- *     = @DeleteMapping : DELETE
- *     ------------------------------------ ≈Î«’ @RequestMapping
- *                    Ω∫«¡∏µ 6 ¿ÃªÛ => @RequestMapping ¡¶∞≈ 
- * 
+ *  Rest API 
+ *    = @GetMapping : SELECT
+ *    = @PostMapping : INSERT
+ *    ------------------  ÏõπÏóêÏÑúÎäî Ï£ºÎ°ú ÏÇ¨Ïö© 
+ *    = @PutMapping : UPDATE
+ *    = @DeleteMapping : DELETE
+ *    ----------------------------------------ÌÜµÌï© @RequestMapping
+ *                      Ïä§ÌîÑÎßÅ 6 => @RequestMappingÏùÑ Ï†úÍ±∞ 
  */
-@RequestMapping("board/") // ∞¯≈Î URL ¡÷º“ º≥¡§ 
+@RequestMapping("board/") // Í≥µÌÜµ URLÏ£ºÏÜå ÏÑ§Ï†ï 
 public class MainController {
-     /*@RequestMapping("insert.do")
-     public String board_insert(HttpServletRequest request,HttpServletResponse response)
-     {
-    	 return "board/insert"; //  == viewResolver ->  /board/insert.jsp    			 
-     }*/
-     
-     @GetMapping("insert.do") // ¿‘∑¬∆˚ / ªÛºº∫∏±‚
-     public String board_insert()
-     {
-    	 return "board/insert";
-     }
-     
-     @PostMapping("insert_ok.do")
-     public String board_insert_ok(HttpServletRequest request,HttpServletResponse response)
-     {
-    	 String name=request.getParameter("name");
-    	 String subject=request.getParameter("subject");
-    	 String content=request.getParameter("content");
-    	 String pwd=request.getParameter("pwd");
-    	 
-    	 BoardVO vo=new BoardVO();
-    	 vo.setName(name);
-    	 vo.setSubject(subject);
-    	 vo.setContent(content);
-    	 vo.setPwd(pwd);
-    	 
-    	 request.setAttribute("vo",vo);
-    	 return "board/list";
-     }
-     
-     @PostMapping("insert_ok2.do")
-     public String board_insert_ok2(String name,String subject,String content,String pwd,Model model)
-     {
-    	
-    	 
-    	 BoardVO vo=new BoardVO();
-    	 vo.setName(name);
-    	 vo.setSubject(subject);
-    	 vo.setContent(content);
-    	 vo.setPwd(pwd);
-    	 
-    	 model.addAttribute("vo",vo);
-    	 return "board/list";
-     }
-     
-     @PostMapping("insert_ok3.do")
-     public String board_insert_ok3(BoardVO vo,Model model)
-     {    	   	    	 
-    	 model.addAttribute("vo",vo);
-    	 return "board/list";
-     }
+   /*@RequestMapping("insert.do")
+   public String board_insert(HttpServletRequest request,
+		   HttpServletResponse response)
+   {
+	   return "board/insert"; // /board/insert.jsp
+   }*/
+   
+   @GetMapping("insert.do") // ÏûÖÎ†•Ìèº / ÏÉÅÏÑ∏Î≥¥Í∏∞  
+   public String board_insert()
+   {
+	   return "board/insert";
+   }
+   @PostMapping("insert_ok.do")
+   public String board_insert_ok(HttpServletRequest request,
+		   HttpServletResponse response)
+   {
+	   String name=request.getParameter("name");
+	   String subject=request.getParameter("subject");
+	   String content=request.getParameter("content");
+	   String pwd=request.getParameter("pwd");
+	   
+	   BoardVO vo=new BoardVO();
+	   vo.setName(name);
+	   vo.setSubject(subject);
+	   vo.setContent(content);
+	   vo.setPwd(pwd);
+	   
+	   request.setAttribute("vo", vo);
+	   return "board/list";
+   }
+   
+   @PostMapping("insert_ok2.do")
+   public String board_insert_ok2(String name,String subject,
+		          String content,String pwd,Model model)
+   {
+	   
+	   BoardVO vo=new BoardVO();
+	   vo.setName(name);
+	   vo.setSubject(subject);
+	   vo.setContent(content);
+	   vo.setPwd(pwd);
+	   
+	   model.addAttribute("vo", vo);
+	   return "board/list";
+   }
+   
+   @PostMapping("insert_ok3.do")
+   public String board_insert_ok3(BoardVO vo,Model model)
+   {
+	   
+	   model.addAttribute("vo", vo);
+	   return "board/list";
+   }
 }

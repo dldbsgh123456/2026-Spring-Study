@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+     <!-- AOP : 공통으로 사용되는 기능 : 공통 모듈 --> 
+     <aop:aspectj-autoproxy/> <!--  Annotation이용 -->
+     <!-- 사용자 정의 클래스 등록 -->
+     <context:component-scan base-package="com.sist.*"/>
+     <!-- 
+         @Component, : 일반 클래스
+         @Repository, : DAO
+         @Service, : BI 통합 (DAO여러개 통합)
+         @Controller, : Model => Router (화면 이동)
+         @RestController, : 다른 프로그램과 연동
+                            javascript / kotlin(안드로이드)
+         @ControllerAdvice, : 공통 예외처리 
+         @Configuration : XML 없이 , 자바로 환경 설정 
+      -->
+     <!-- ViewResolver 설정 : 이미 만들어져 있는 클래스  
+          경로명 / 확장자 선언 -->
+     <mvc:annotation-driven/>
+     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+         p:prefix="/"
+         p:suffix=".jsp"
+     />
+     <!-- 멀티 파일 업로드 -->
+
+</beans>
