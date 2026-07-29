@@ -1,4 +1,4 @@
-#Spring MVC 핵심 - 의존성 주입 / Controller 분리 / 전역 예외처리
+# Spring MVC 핵심 - 의존성 주입 / Controller 분리 / 전역 예외처리
 
 ## 생성자 주입 (@RequiredArgsConstructor)
 
@@ -48,9 +48,9 @@ public class FoodRestController {
 두 컨트롤러가 같은 Service를 그대로 재사용 → 화면용/외부 API용을 역할만 다르게 분리하는 패턴
 @CrossOrigin(origins = "*"): 다른 도메인/포트(Vue 개발 서버 등)에서의 요청을 허용하는 CORS 설정
 
-▶ 전역 예외 처리 (@ControllerAdvice)
+## 전역 예외 처리 (@ControllerAdvice)
 
-java
+'''java
 @ControllerAdvice
 public class CommonsException {
 
@@ -64,6 +64,7 @@ public class CommonsException {
         ex.printStackTrace();
     }
 }
+'''
 @ControllerAdvice가 붙은 클래스는 모든 @Controller에 공통 적용되는 예외 처리기
 @ExceptionHandler(Exception.class)처럼 특정 예외 타입을 지정하면, 그 컨트롤러 계층 어디서든 해당 예외가 발생 시 이 메서드가 대신 처리
 각 컨트롤러마다 try-catch를 반복하지 않아도 됨
