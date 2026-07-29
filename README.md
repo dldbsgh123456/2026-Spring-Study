@@ -11,6 +11,8 @@
 - [요청 처리 흐름 (DispatcherServlet)](./spring-mvc/request-flow.md)
 - [RequestMapping](./spring-mvc/controller.md)
 - [Controller/RestController 분리 & 전역 예외처리](./docs/spring-mvc-food-example.md)
+- [파일 업로드 처리 & 화면 include 패턴](./docs/spring-mvc-file-upload.md)
+
 - [View Resolver](./spring-mvc/view-resolver.md)
 
 ### 데이터베이스 연동
