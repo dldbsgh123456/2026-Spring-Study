@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%--
-     톰캣 : 9버전 => javax
-           10버전이상 => jakarata
-           버전 호환 
- --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +21,17 @@ p{
 <body>
   <div class="container">
     <div class="row">
+	    <form method="post" action="../food/find.do">
+	      <select name="column" class="input-sm">
+	        <option value="address" ${column=='address'?'selected':''}>주소</option>
+	        <option  value="type" ${column=='type'?'selected':''}>음식종류</option>
+	        <option  value="name" ${column=='name'?'selected':''}>업체명</option>
+	      </select>
+	      <input type=text name="fd" class="input-sm" size=20 value="${fd}" required>
+	      <input type="submit" value="검색" class="btn-sm btn-primary">
+	    </form>
+    </div>
+    <div class="row" style="margin-top: 10px">
        <c:forEach var="vo" items="${list}">
 		  <div class="col-md-4">
 		    <div class="thumbnail">
