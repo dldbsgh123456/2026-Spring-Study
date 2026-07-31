@@ -17,7 +17,7 @@
 
 ### 데이터베이스 연동
 - [MyBatis 설정](./data-access/mybatis-config.md)
-- [트랜잭션 관리](./data-access/transaction.md)
+- [트랜잭션 관리](./spring-transactional-reply-board.md)
 
 ### 기타
 - [헷갈렸던 부분 모음](./etc/troubleshooting.md)
