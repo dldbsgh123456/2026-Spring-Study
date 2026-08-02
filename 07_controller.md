@@ -1,5 +1,3 @@
-# Spring MVC — Controller 계층 정리 (1/2)
-
 ## 1. `@Controller` 매개변수로 값 받기
 
 Spring MVC는 `request.getParameter()` 대신 **매개변수 이름 = 요청 키(key)**로 자동 바인딩한다. 순서는 상관없고, 이름만 일치하면 됨.
