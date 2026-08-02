@@ -1,7 +1,7 @@
 # 🌱 Spring 학습 정리
 
 ### 정리
-- [26.07.20](./spring-basic/ioc-di.md)
+- [26.07.20](./docs/ioc-di.md)
 - [26.07.21](./docs/06_annotation.md)
 - [26.07.22]
 - [26.07.23]
