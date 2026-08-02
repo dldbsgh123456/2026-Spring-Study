@@ -1,7 +1,3 @@
-# Spring MVC — Mapper / Service / View 정리 (2/2)
-
-*(1/2 Controller 계층 정리에 이어서)*
-
 ## 1. Mapper — 어노테이션 방식 vs XML 방식
 
 단순 SQL은 `@Select`/`@Insert`로 인터페이스에 바로 작성하지만, **조건이 동적으로 바뀌는 SQL**은 XML 매퍼로 분리한다.
