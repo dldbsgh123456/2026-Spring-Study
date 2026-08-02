@@ -3,7 +3,7 @@
 ### 정리
 - [26.07.20](./docs/ioc-di.md)
 - [26.07.21](./docs/spring_annotation.md)
-- [26.07.22](./docs/spring.md)
+- [26.07.22](./docs/spring_anno&mvc.md)
 - [26.07.23] - 1차 프로젝트 마무리 
 - [26.07.24] - 1차 프로젝트 마무리 
 - [26.07.27]
