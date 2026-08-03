@@ -1,9 +1,3 @@
-# Spring Security / Interceptor / AOP 정리
-
-업로드해주신 5개 파일(`application-security.xml`, `LoginSuccessHandler`, `LoginFailureHandler`, `MainInterceptor`, `FooterCommonsAspect`)을 주제별로 정리했습니다.
-
----
-
 ## ▶ 1. Spring Security 설정 (`application-security.xml`)
 
 ### 요청 흐름
