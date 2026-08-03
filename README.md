@@ -10,7 +10,7 @@
 - [26.07.28](./docs/spring_mapper_view.md)
 - [26.07.29](./docs/spring-mvc-file-upload.md)
 - [26.07.30](./spring-transactional-reply-board.md)
-- [26.07.31]()
+- [26.07.31](./spring_security.md)
 
 ## 🛠 기술 스택
 
